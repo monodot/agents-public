@@ -1,5 +1,7 @@
 # Weather Agent
 
+**This agent was originally written by Copilot Agent when this repo was first created.**
+
 A command-line weather agent that uses Claude AI to answer questions about current weather conditions. The agent uses the Claude API with tool calling to fetch real-time weather data from the Norwegian Meteorological Institute's API (api.met.no).
 
 ## Features
