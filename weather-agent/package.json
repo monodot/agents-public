@@ -1,0 +1,21 @@
+{
+  "name": "weather-agent",
+  "version": "1.0.0",
+  "description": "CLI agent to ask about current weather using Claude API and api.met.no",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["weather", "claude", "agent", "llm"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}
