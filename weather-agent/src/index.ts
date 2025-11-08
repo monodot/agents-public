@@ -33,7 +33,7 @@ const weatherTool: Anthropic.Tool = {
 async function getWeatherData(latitude: number, longitude: number): Promise<string> {
   try {
     const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${latitude}&lon=${longitude}`;
-    const command = `curl -s -A "WeatherAgent/1.0" "${url}"`;
+    const command = `curl -s -A "WeatherAgent/1.0 github.com/monodot/agents-public" "${url}"`;
     
     const { stdout, stderr } = await execAsync(command);
     
@@ -97,7 +97,7 @@ async function runWeatherAgent(userQuery: string) {
   ];
   
   let response = await client.messages.create({
-    model: 'claude-3-5-sonnet-20241022',
+    model: "claude-sonnet-4-5",
     max_tokens: 1024,
     tools: [weatherTool],
     messages: messages
@@ -139,7 +139,7 @@ async function runWeatherAgent(userQuery: string) {
     
     // Get next response from Claude
     response = await client.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: "claude-sonnet-4-5",
       max_tokens: 1024,
       tools: [weatherTool],
       messages: messages
